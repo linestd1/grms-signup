@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRMS Sign-Up · Project InnerSpace</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;background:linear-gradient(160deg,#0d1b2e 0%,#050e1a 100%);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px;color:#fff;}
+  .header{width:100%;max-width:460px;background:rgba(30,126,200,0.2);border:2px solid #1e7ec8;border-bottom:none;border-radius:10px 10px 0 0;padding:16px 22px;}
+  .funded{font-size:10px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:3px;}
+  .pi{font-size:22px;font-weight:900;color:#fff;}
+  .pi span{color:#f0a500;}
+  .pi-sub{font-size:14px;font-weight:800;color:#fff;margin-top:2px;}
+  .event{font-size:11px;color:#f0a500;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-top:8px;}
+  .card{width:100%;max-width:460px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-top:none;border-radius:0 0 10px 10px;padding:24px 22px;}
+  h2{font-size:24px;font-weight:900;color:#fff;margin-bottom:6px;}
+  .sub{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.5;margin-bottom:20px;}
+  .role-group{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
+  .role-label{font-size:10px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:6px;}
+  .role-opt{display:flex;align-items:flex-start;gap:12px;padding:11px 14px;border-radius:7px;border:1.5px solid rgba(255,255,255,0.1);cursor:pointer;transition:all .2s;background:rgba(255,255,255,0.03);}
+  .role-opt:hover{border-color:rgba(255,255,255,0.25);}
+  .role-opt input{margin-top:3px;accent-color:#f0a500;width:15px;height:15px;flex-shrink:0;cursor:pointer;}
+  .role-opt.board  {border-color:#1e7ec8;background:rgba(30,126,200,0.1);}
+  .role-opt.review {border-color:#16a085;background:rgba(22,160,133,0.1);}
+  .role-opt.endorse{border-color:#8e44ad;background:rgba(142,68,173,0.1);}
+  .role-title{font-size:14px;font-weight:800;color:#fff;}
+  .role-desc{font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px;line-height:1.4;}
+  .field{margin-bottom:14px;}
+  label{display:block;font-size:10px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:5px;}
+  input[type=text],input[type=email],input[type=tel]{
+    width:100%;background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.12);
+    border-radius:7px;padding:11px 14px;font-size:15px;color:#fff;outline:none;font-family:inherit;
+    transition:border-color .2s;
+  }
+  input:focus{border-color:#1e7ec8;}
+  input::placeholder{color:rgba(255,255,255,0.2);}
+  .btn{width:100%;padding:14px;background:#1e7ec8;border:none;border-radius:7px;font-size:15px;font-weight:800;color:#fff;cursor:pointer;letter-spacing:.5px;text-transform:uppercase;transition:background .2s;margin-top:6px;font-family:inherit;}
+  .btn:hover{background:#2a9ae0;}
+  .footer{margin-top:14px;font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:1px;text-align:center;text-transform:uppercase;}
+  .success{text-align:center;padding:32px 16px;display:none;}
+  .success h3{font-size:22px;font-weight:900;color:#fff;margin:12px 0 8px;}
+  .success p{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.6;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="funded">Funded &amp; hosted by</div>
+  <div class="pi">Project <span>InnerSpace</span></div>
+  <div class="pi-sub">Funding the GRMS Development Program</div>
+  <div class="event">CERAWeek 2026 &middot; Geothermal House &middot; Wednesday 25 March</div>
+</div>
+
+<div class="card">
+
+  <div id="form-view">
+    <h2>Join the GRMS</h2>
+    <p class="sub">The Geothermal Resource Management Standard launches today at 10:30.<br>
+    Select your role and register your interest below.</p>
+
+    <div class="role-label">Your Role *</div>
+    <div class="role-group">
+      <label class="role-opt board">
+        <input type="radio" name="role" value="Supervisory Board" required>
+        <div>
+          <div class="role-title">Supervisory Board</div>
+          <div class="role-desc">Shape the governance and strategic direction of the GRMS framework</div>
+        </div>
+      </label>
+      <label class="role-opt review">
+        <input type="radio" name="role" value="Technical Reviewer">
+        <div>
+          <div class="role-title">Technical Reviewer</div>
+          <div class="role-desc">Review and stress-test the draft framework before SPE OnePetro publication</div>
+        </div>
+      </label>
+      <label class="role-opt endorse">
+        <input type="radio" name="role" value="Institutional Endorser">
+        <div>
+          <div class="role-title">Institutional Endorser</div>
+          <div class="role-desc">Formally endorse the GRMS framework on behalf of your organisation</div>
+        </div>
+      </label>
+    </div>
+
+    <form id="signup-form" action="https://formspree.io/f/mwvnzzwe" method="POST">
+      <input type="hidden" name="_subject" value="GRMS Sign-Up — CERAWeek 2026">
+      <input type="hidden" name="_next"    value="">  <!-- handled by JS -->
+      <input type="hidden" id="role-hidden" name="role" value="">
+
+      <div class="field">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" placeholder="Dr Jane Smith" required>
+      </div>
+      <div class="field">
+        <label for="company">Company *</label>
+        <input type="text" id="company" name="company" placeholder="e.g. Ryder Scott" required>
+      </div>
+      <div class="field">
+        <label for="position">Position / Title *</label>
+        <input type="text" id="position" name="position" placeholder="e.g. Chief Geologist" required>
+      </div>
+      <div class="field">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+      </div>
+      <div class="field">
+        <label for="cell">Cell / Mobile (optional)</label>
+        <input type="tel" id="cell" name="cell" placeholder="+1 713 000 0000">
+      </div>
+
+      <button type="submit" class="btn">Register Interest</button>
+    </form>
+  </div>
+
+  <div class="success" id="success-view">
+    <div style="font-size:52px">&#9989;</div>
+    <h3>You're registered.</h3>
+    <p>Thank you. Tim Lines and Mahesh Jayaraman<br>will be in touch with next steps for the GRMS.</p>
+    <div style="margin-top:20px;padding:14px;background:rgba(30,126,200,0.15);border:1px solid #1e7ec8;border-radius:8px;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;">
+      <strong style="color:#fff;">Launch: 10:30 &nbsp;&middot;&nbsp; Workshop: 11:30</strong><br>
+      CERAWeek 2026 &middot; Geothermal House &middot; Houston
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">GRMS &middot; Project InnerSpace &middot; SPE OnePetro</div>
+
+<script>
+  // Copy radio value into hidden field before submit
+  document.querySelectorAll('input[name="role"]').forEach(r => {
+    r.addEventListener('change', () => {
+      document.getElementById('role-hidden').value = r.value;
+    });
+  });
+
+  // Intercept form submit — use fetch so we can show success state without redirect
+  document.getElementById('signup-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const role = document.querySelector('input[name="role"]:checked');
+    if (!role) { alert('Please select a role.'); return; }
+    document.getElementById('role-hidden').value = role.value;
+    const data = new FormData(this);
+    try {
+      const res = await fetch(this.action, {
+        method: 'POST', body: data, headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('form-view').style.display    = 'none';
+        document.getElementById('success-view').style.display = 'block';
+      } else {
+        alert('Submission failed — please try again or email tim@projectinnerspace.org');
+      }
+    } catch(err) {
+      alert('Network error — please try again.');
+    }
+  });
+</script>
+</body>
+</html>
