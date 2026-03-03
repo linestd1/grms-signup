@@ -54,10 +54,9 @@
 </div>
 
 <div class="card">
-
   <div id="form-view">
     <h2>Join the GRMS</h2>
-    <p class="sub">The Geothermal Resource Management Standard launches today at 10:30.<br>
+    <p class="sub">The Geothermal Resources Management System (GRMS) launches today at 10:30.<br>
     Select your role and register your interest below.</p>
 
     <div class="role-label">Your Role *</div>
@@ -87,7 +86,7 @@
 
     <form id="signup-form" action="https://formspree.io/f/mpqjneab" method="POST">
       <input type="hidden" name="_subject" value="GRMS Sign-Up — CERAWeek 2026">
-      <input type="hidden" name="_next"    value="">  <!-- handled by JS -->
+      <input type="hidden" name="_next"    value="">
       <input type="hidden" id="role-hidden" name="role" value="">
 
       <div class="field">
@@ -124,20 +123,17 @@
       CERAWeek 2026 &middot; Geothermal House &middot; Houston
     </div>
   </div>
-
 </div>
 
 <div class="footer">GRMS &middot; Project InnerSpace &middot; SPE OnePetro</div>
 
 <script>
-  // Copy radio value into hidden field before submit
   document.querySelectorAll('input[name="role"]').forEach(r => {
     r.addEventListener('change', () => {
       document.getElementById('role-hidden').value = r.value;
     });
   });
 
-  // Intercept form submit — use fetch so we can show success state without redirect
   document.getElementById('signup-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const role = document.querySelector('input[name="role"]:checked');
